@@ -143,14 +143,33 @@ app.listen(port, () => {
 })
 
 app.get('/movies', async (req, res) => {
-    const response = await movies.getAll()
 
-    res.send(response)
+    try {
+        const response = await movies.getAll()
+
+        res.send(response)
+
+    } catch (error) {
+
+        console.log(`Ocurrió un error: ${error}`)
+
+    }
+
+
 })
 
 app.get('/moviesRandom', async (req, res) => {
-    const response = await movies.getRandom()
 
-    res.send(response)
+    try {
+        const response = await movies.getRandom()
+
+        res.send(response)
+
+    } catch (error) {
+
+        console.log(`Ocurrió un error: ${error}`)
+
+    }
+
 })
 
